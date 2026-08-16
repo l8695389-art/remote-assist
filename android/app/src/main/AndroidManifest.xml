@@ -1,1 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Internet + network state: required for WebSocket signaling and WebRTC/STUN/TURN -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Required to run the screen-capture foreground service (Android 9+) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- Required foreground service type declaration (Android 10+ / enforced strictly on 14+) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+
+    <!-- Ordinary notification permission (Android 13+) so the "sharing in progress" banner can show -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- NOTE: no RECORD_AUDIO, no SYSTEM_ALERT_WINDOW, no BIND_ACCESSIBILITY_SERVICE
+         self-grant, no device-admin permissions. Accessibility must be enabled
+         manually by the device owner in system Settings; this app cannot and
+         does not attempt to grant it programmatically. -->
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.RemoteAssist"
+        android:usesCleartextTraffic="false">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".HostActivity"
+            android:exported="false"
+            android:label="@string/host_mode_title" />
+
+        <activity
+            android:name=".ControllerActivity"
+            android:exported="false"
+            android:label="@string/controller_mode_title" />
+
+        <!-- Foreground service that owns the MediaProjection + WebRTC capture pipeline.
+             Declared with the mandatory mediaProjection type. -->
+        <service
+            android:name=".service.ScreenCaptureService"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
+
+        <!-- Accessibility service used ONLY to replay gestures during an active,
+             explicitly-started remote session. The user must enable it manually
+             from Settings > Accessibility; this app never toggles it itself. -->
+        <service
+            android:name=".service.RemoteControlAccessibilityService"
+            android:exported="false"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+    </application>
+</manifest>
