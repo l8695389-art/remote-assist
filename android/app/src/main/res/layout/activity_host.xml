@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/status_idle"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_pairing_code"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvPairingCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="------"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:letterSpacing="0.3"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tvCodeExpiry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/warn_red"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnStartShare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_start_share" />
+
+    <Button
+        android:id="@+id/btnStopShare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_stop_share"
+        android:layout_marginTop="12dp"
+        android:enabled="false" />
+
+    <Button
+        android:id="@+id/btnDisconnect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_disconnect"
+        android:backgroundTint="@color/warn_red"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/tvAccessibilityWarning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/warn_red"
+        android:visibility="gone" />
+
+</LinearLayout>

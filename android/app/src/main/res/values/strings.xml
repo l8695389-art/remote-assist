@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Remote Assist</string>
+    <string name="host_mode_title">Chia sẻ màn hình (Host)</string>
+    <string name="controller_mode_title">Điều khiển (Controller)</string>
+
+    <string name="btn_host_mode">Chia sẻ màn hình của tôi</string>
+    <string name="btn_controller_mode">Điều khiển thiết bị khác</string>
+
+    <string name="btn_start_share">Bắt đầu chia sẻ</string>
+    <string name="btn_stop_share">Dừng chia sẻ</string>
+    <string name="btn_disconnect">Ngắt kết nối</string>
+    <string name="btn_connect">Kết nối</string>
+
+    <string name="label_pairing_code">Mã ghép đôi</string>
+    <string name="hint_enter_code">Nhập mã 6 chữ số</string>
+    <string name="status_waiting_controller">Đang chờ thiết bị điều khiển kết nối…</string>
+    <string name="status_sharing_active">Đang chia sẻ màn hình với thiết bị điều khiển</string>
+    <string name="status_idle">Chưa chia sẻ</string>
+    <string name="status_connecting">Đang kết nối…</string>
+    <string name="status_connected">Đã kết nối</string>
+    <string name="status_disconnected">Đã ngắt kết nối</string>
+
+    <string name="notif_channel_name">Phiên chia sẻ màn hình</string>
+    <string name="notif_channel_desc">Hiển thị khi màn hình của bạn đang được chia sẻ hoặc điều khiển từ xa</string>
+    <string name="notif_sharing_title">Màn hình đang được chia sẻ</string>
+    <string name="notif_sharing_text">Nhấn để mở ứng dụng · Nhấn Dừng để kết thúc ngay</string>
+    <string name="notif_action_stop">Dừng chia sẻ</string>
+
+    <string name="accessibility_service_description">Cho phép Remote Assist thực hiện thao tác chạm trên màn hình khi bạn chủ động cho phép một phiên điều khiển từ xa đang hoạt động. Bạn có thể tắt quyền này bất cứ lúc nào trong Cài đặt.</string>
+
+    <string name="dialog_accessibility_required_title">Cần bật Accessibility</string>
+    <string name="dialog_accessibility_required_msg">Để nhận thao tác điều khiển từ xa, hãy bật dịch vụ trợ năng \"Remote Assist\" trong Cài đặt &gt; Trợ năng. Bạn phải tự bật thủ công.</string>
+    <string name="dialog_open_settings">Mở Cài đặt</string>
+    <string name="dialog_cancel">Hủy</string>
+</resources>
