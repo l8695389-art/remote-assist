@@ -9,7 +9,7 @@ import org.webrtc.PeerConnection
 object AppConfig {
 
     /** wss:// endpoint of the deployed Worker, e.g. wss://remote-assist-signal.<subdomain>.workers.dev/signal */
-    const val SIGNALING_SERVER_URL = "wss://remote-assist-signal.example.workers.dev/signal"
+    const val SIGNALING_SERVER_URL = "wss://remote-assist-signal.crystal-farm.workers.dev/signal"
 
     /**
      * ICE servers used for NAT traversal. STUN is free (Google's public servers).

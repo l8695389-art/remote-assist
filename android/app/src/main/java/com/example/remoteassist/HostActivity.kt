@@ -62,6 +62,7 @@ class HostActivity : AppCompatActivity(), ScreenCaptureService.StatusListener {
         super.onCreate(savedInstanceState)
         binding = ActivityHostBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.btnStartShare.isEnabled = false
 
         checkAccessibilityEnabled()
 
